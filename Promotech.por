@@ -1,7 +1,13 @@
 programa
-{	
-	funcao logico login(){
-		cadeia usuario, senha
+{	
+	inclua biblioteca Util --> u
+
+	cadeia usuarios[] = {"unamon","AquinoMatheus16","Christianbn","JoaoPedroMS01","AndersonLPS"}
+	cadeia senhas[] = {"502", "123", "159", "021", "996"}
+
+	cadeia usuario, senha 
+	/*funcao logico login(){
+		
 		
 		escreva("-----LOGIN-----")
 		escreva("\nUsuário: ")
@@ -26,12 +32,34 @@ programa
 			retorne verdadeiro
 		}
 	}
+	*/
+	funcao login(){
+        inteiro quantErros = 0
+        logico valida = falso
+        escreva("======LOGIN======")
+        escreva("Insira seu usuario: ")
+        leia(usuario)
+        escreva("Insira sua senha: ")
+        leia(senha)
+        limpa()
+
+        para(inteiro i=0; i< u.numero_elementos(usuarios); i++){
+            se(usuario == usuarios[i] e senha == senhas[i]){
+                valida = verdadeiro
+            }
+        }
+
+        se(valida == verdadeiro){
+            escreva("Olá, ", usuario, " o que deseja fazer?\n" )
+            menu_principal()    
+        }senao{
+            quantErros = quantErros + 1
+            menuRetorno(quantErros)
+        }
+    }
 	
 	funcao inicio()
-	{	
-		escreva(login())
-		
-	
+	{	
 		
 	}
 }
@@ -40,7 +68,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 384; 
+ * @POSICAO-CURSOR = 1105; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
