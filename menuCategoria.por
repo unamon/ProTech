@@ -1,5 +1,7 @@
 programa
 {
+
+	
 		cadeia produtos[9] = {"Computador", "Notebook", "Impressora", "Celular", "Tablet", "Power Bank", "Xbox", "Ps4", "Nitendo"}
 		cadeia descricoes[9] = {"Core i7 16GB RAM DDR4, SSD 240GB", "Core i5 8GB RAM DDR3, SSD 240GB", "Multifuncional HP DeskJet Ink Advantage 2774 com Wi-Fi",
 		"Samsung Galaxy A03 Core 32GB Preto 4G", "Galaxy Tab A7 Lite 4G 32GB 3G RAM Tela imersiva", "Carregador Portátil Power Bank Redmi 10000mAh", "Fat 500gb Completo",
