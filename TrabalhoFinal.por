@@ -95,7 +95,6 @@ programa{
 		escolha(opcao){
 			caso 0:
 				sair()
-				login()
 			pare
 			caso 1:
 				produtosCategoria()
@@ -159,7 +158,7 @@ programa{
 			pare
 			caso 0:
 				limpa()
-				produtosCategoria()
+				menuPrincipal()
 			pare
 			caso contrario:
 				escreva("Por favor selecione uma opção valida!")
@@ -179,31 +178,24 @@ programa{
 			   "=====================================================\n\n",
 			   "Digite uma opção: ")
 		leia(opcao)
+		limpa()
 		
 		escolha (opcao) {
 			caso 1:
-				limpa()
 				catProdutosEscritorio()
-				pare
-
+			pare
 			caso 2:
-				limpa()
 				catProdutosPortateis()
-				pare
-
+			pare
 			caso 3:
-				limpa()
 				catProdutosConsoles()
-				pare
-
+			pare
 			caso 0:
-				limpa()
 				menuPrincipal()
-				pare
-
+			pare
 			caso contrario:
 				escreva("Opção inválida!")
-				
+			pare
 			}
 		}
 
@@ -377,6 +369,7 @@ programa{
 			   "=============================================\n\n",
 			   "Deseja confirmar a compra? ")
 		leia(opcao)
+		limpa()
 		
 		escolha(opcao){
 			caso '1':
@@ -484,10 +477,14 @@ programa{
 	funcao sair(){//Confirmação de saida
 		caracter confirma
 		limpa()
-		escreva("Você tem certeza que deseja sair? \n1 - Sim \n2 - Não \n3 - Sair da conta\n")
+		escreva("=============== SAIR ===============\n",
+			   "Opção 1 - Sim. Sair da loja.\n",
+			   "Opção 2 - Não. Voltar ao menu principal.\n",
+			   "Opção 3 - Sair da conta\n",
+			   "====================================\n\n",
+			   "Você tem certeza que deseja sair? ")
 		leia(confirma)
 		limpa()
-		//faca{
 			escolha(confirma){
 				caso '1':
 					escreva("Volte sempre!!\n\n")
@@ -504,7 +501,6 @@ programa{
 					sair()
 				pare
 			}
-		//}enquanto(confirma != '1' )
 	}
 	
 		//Imagens
@@ -668,8 +664,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1111; 
- * @DOBRAMENTO-CODIGO = [21, 46, 55, 78, 114, 169, 209, 247, 285, 323, 335, 370, 395, 407, 432, 453, 483, 510, 527, 544, 561, 578, 595, 612, 629, 646];
+ * @POSICAO-CURSOR = 3137; 
+ * @DOBRAMENTO-CODIGO = [21, 46, 55, 113, 168, 201, 239, 277, 315, 327, 362, 388, 400, 425, 446, 506, 523, 540, 557, 574, 591, 608, 625, 642];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
