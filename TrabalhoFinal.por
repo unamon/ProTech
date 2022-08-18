@@ -19,7 +19,7 @@ programa{
 	
 	real precoPedido = 0.0
 			
-	funcao inicio(){
+	funcao inicio(){//Pergunta se deseja entrar na loja
 		caracter opcao
 		
 		escreva("Deseja entrar na ProTech? \n",
@@ -44,8 +44,7 @@ programa{
 		}
 	}
 	
-	funcao logo()
-	{
+	funcao logo(){//Logo da loja
 		escreva("██████╗ ██████╗  █████╗ ████████╗███████╗ █████╗ ██╗  ██╗\n",
 			   "██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗██║  ██║\n",
 			   "██████╔╝██████╔╝██║  ██║   ██║   █████╗  ██║  ╚═╝███████║\n",
@@ -54,7 +53,7 @@ programa{
 			   "╚═╝     ╚═╝  ╚═╝ ╚════╝    ╚═╝   ╚══════╝ ╚════╝ ╚═╝  ╚═╝\n\n")
 	}
 
-	funcao login(){
+	funcao login(){//Login e validação
         logico valida = falso
         escreva("=============== LOGIN ===============\n")
         escreva("Insira seu usuario: ")
@@ -77,7 +76,7 @@ programa{
         }
     }
 	
-	funcao menuPrincipal(){
+	funcao menuPrincipal(){//Exibe "Menu principal"
 		inteiro opcao
 
 		escreva("Olá, ", usuario, "! O que deseja fazer?\n\n" )
@@ -113,8 +112,7 @@ programa{
 		}
 	}
 
-	funcao listaProdutos()
-	{
+	funcao listaProdutos(){//Exibe todos os produtos
 		inteiro opcao =0, numero = 0
 		
 		escreva("=============== PRODUTOS ===============\n")
@@ -169,7 +167,7 @@ programa{
 	}
 }
 
-	funcao produtosCategoria() {
+	funcao produtosCategoria() {//Seleção de categorias
 
 		inteiro opcao
 		
@@ -209,7 +207,7 @@ programa{
 			}
 		}
 
-	funcao catProdutosEscritorio() {
+	funcao catProdutosEscritorio() {//Exibe os produtos da categoria "Escritorio"
 		limpa()
 		inteiro opcao =0, numero = 0
 		
@@ -247,7 +245,7 @@ programa{
 		}
 	}
 
-	funcao catProdutosPortateis() {
+	funcao catProdutosPortateis() {//Exibe os produtos da categoria "Portateis"
 		limpa()
 		inteiro opcao =0, numero = 0
 		
@@ -285,7 +283,7 @@ programa{
 		}
 	}
 
-	funcao catProdutosConsoles() {
+	funcao catProdutosConsoles() {//Exibe os produtos da categoria "Console"
 		limpa()
 		inteiro opcao =0, numero = 0
 		
@@ -323,7 +321,7 @@ programa{
 		}
 	}
 
-	funcao inteiro quantidade(inteiro indice){
+	funcao inteiro quantidade(inteiro indice){//Controle de estoque
         inteiro num
         escreva("Quantos ", produtos[indice], "(s) deseja comprar? ")
         leia(num)
@@ -335,7 +333,7 @@ programa{
         }
     	}
 
-	funcao menuFinal(){
+	funcao menuFinal(){ //Pergunta se deseja finalizar o pedido
 		caracter resp, s, n
 		
 		
@@ -370,7 +368,7 @@ programa{
 		}
 	}
 	
-	funcao confirmacaoCompra(){
+	funcao confirmacaoCompra(){ //Pergunta se deseja confirmar a compra
 		caracter opcao
 	
 		escreva("================ CONFIRMAÇÃO ================\n",
@@ -395,7 +393,7 @@ programa{
 		
 	}
 	
-	funcao erroLogin(inteiro erros){
+	funcao erroLogin(inteiro erros){ //Tratamento de erros repetidos no login
 		se(erros >= 3){
 			escreva("Você ultrapassou a quantidade de 3 tentativas. Tente novamente em alguns segundos.\n\n")
 			quantErros = 0
@@ -407,7 +405,7 @@ programa{
 		}
 	}
 
-	funcao cancelaLogin(){
+	funcao cancelaLogin(){//Pergunta se deseja cancelar o login
 		caracter opcao
 
 		escreva("Deseja cancelar o login?\n",
@@ -432,7 +430,7 @@ programa{
 		}
 	}
 
-	funcao seleciona(inteiro indice){
+	funcao seleciona(inteiro indice){//Informa o produto selecionado e diminui no estoque
 		inteiro quantiaComprada
 		limpa()
 		
@@ -453,7 +451,7 @@ programa{
 		
 	}
 	
-	funcao continua(){
+	funcao continua(){//Pergunta se deseja continuar comprando
 		caracter confirma
 
 		escreva("\n\nOpção 1: Continuar comprando.\n",
@@ -483,7 +481,7 @@ programa{
 		}
 	}
 	
-	funcao sair(){
+	funcao sair(){//Confirmação de saida
 		caracter confirma
 		limpa()
 		escreva("Você tem certeza que deseja sair? \n1 - Sim \n2 - Não \n3 - Sair da conta\n")
@@ -509,8 +507,8 @@ programa{
 		//}enquanto(confirma != '1' )
 	}
 	
-	//Imagens
-	funcao imagem1(){
+		//Imagens
+	funcao imagem1(){//Notebook
 		
 		inteiro imag = g.carregar_imagem("imagens/imagem1.jpg")
 		logico i = verdadeiro
@@ -527,7 +525,7 @@ programa{
 		seleciona(1)
 	}
 
-	funcao imagem2(){
+	funcao imagem2(){//Computador
 
 		inteiro imag = g.carregar_imagem("imagens/imagem2.jpg")
 		logico i = verdadeiro
@@ -544,7 +542,7 @@ programa{
 		seleciona(0)
 	}
 
-	funcao imagem3(){
+	funcao imagem3(){//Impressora
 
 		inteiro imag = g.carregar_imagem("imagens/imagem3.jpg")
 		logico i = verdadeiro
@@ -561,7 +559,7 @@ programa{
 		seleciona(2)
 	}
 	
-	funcao imagem4(){
+	funcao imagem4(){//Celular
 
 		inteiro imag = g.carregar_imagem("imagens/imagem4.png")
 		logico i = verdadeiro
@@ -578,7 +576,7 @@ programa{
 		seleciona(3)
 	}
 
-	funcao imagem5() {
+	funcao imagem5(){//Tablet
 
 		inteiro imag = g.carregar_imagem("imagens/imagem5.jpg")
 		logico i = verdadeiro
@@ -595,7 +593,7 @@ programa{
 		seleciona(4)
 	}
 
-	funcao imagem6(){
+	funcao imagem6(){//PowerBank
 
 		inteiro imag = g.carregar_imagem("imagens/imagem6.jpg")
 		logico i = verdadeiro
@@ -612,7 +610,7 @@ programa{
 		seleciona(5)
 	}
 
-	funcao imagem7(){
+	funcao imagem7(){//Xbox
 
 		inteiro imag = g.carregar_imagem("imagens/imagem7.png")
 		logico i = verdadeiro
@@ -629,7 +627,7 @@ programa{
 		seleciona(6)
 	}
 
-	funcao imagem8(){
+	funcao imagem8(){//PS4
 
 		inteiro imag = g.carregar_imagem("imagens/imagem8.jpg")
 		logico i = verdadeiro
@@ -646,7 +644,7 @@ programa{
 		seleciona(7)
 	}
 	
-	funcao imagem9(){
+	funcao imagem9(){//Nintendo
 
 		inteiro imag = g.carregar_imagem("imagens/imagem9.jpg")
 		logico i = verdadeiro
@@ -670,8 +668,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 7262; 
- * @DOBRAMENTO-CODIGO = [21, 46, 56, 79, 115, 171, 249, 325, 337, 372, 397, 409, 455, 485];
+ * @POSICAO-CURSOR = 1111; 
+ * @DOBRAMENTO-CODIGO = [21, 46, 55, 78, 114, 169, 209, 247, 285, 323, 335, 370, 395, 407, 432, 453, 483, 510, 527, 544, 561, 578, 595, 612, 629, 646];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
