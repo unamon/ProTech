@@ -2,7 +2,6 @@ programa{
 	inclua biblioteca Util --> u
 	inclua biblioteca Matematica --> mat
 	inclua biblioteca Graficos --> g
-	inclua biblioteca Tipos --> t
 	
 	//Login
 	inteiro quantErros = 0
@@ -346,7 +345,7 @@ programa{
         }
     	}
 
-	funcao menuFinal(){ //Pergunta se deseja finalizar o pedido
+	funcao menuFinal(){ //Pergunta se deseja finalizar o pedido3
 		caracter resp, s, n
 		
 		escreva("================ FINALIZAR PEDIDO ================\n",
@@ -369,7 +368,9 @@ programa{
 				menuPrincipal()
 			pare	
 			caso '3':
-				escreva("Você cancelou sua compra com sucesso. \nEspero que volte mais vezes para nossa loja!\n\n")
+				escreva("Você cancelou sua compra com sucesso. \n",
+					   "Espero que volte mais vezes para nossa loja!\n\n")
+				precoPedido = 0.0
 				login()
 			pare
 			caso '0':
@@ -424,7 +425,7 @@ programa{
 			login()
 		}
 	}
-
+	
 	funcao cancelaLogin(){//Pergunta se deseja cancelar o login
 		caracter opcao
 
@@ -457,7 +458,7 @@ programa{
 		limpa()
 		
 		se (qtdes[indice] > 0){
-			escreva("Você selecionou ", produtos[indice],"\n", "Temos ", qtdes[indice], " disponiveis em estoque.\n" )	
+			escreva("Você selecionou ", produtos[indice],"\n", "Temos ", qtdes[indice], " disponiveis em estoque.\n\n" )	
 			quantiaComprada = quantidade(indice)		
 			precoPedido += quantiaComprada * precos[indice]
 			qtdes[indice] -= quantiaComprada
@@ -702,8 +703,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12783; 
- * @DOBRAMENTO-CODIGO = [13, 22, 49, 58, 122, 178, 216, 256, 296, 336, 348, 415, 427, 454, 544, 561, 578, 595, 612, 629, 646, 663, 680];
+ * @POSICAO-CURSOR = 9325; 
+ * @DOBRAMENTO-CODIGO = [12, 21, 48, 57, 121, 177, 215, 255, 295, 335, 385, 416, 428, 476, 515, 545, 562, 579, 596, 613, 630, 647, 664, 681];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
