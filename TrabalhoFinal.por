@@ -42,6 +42,7 @@ programa{
 			caso contrario:
 				escreva("Por favor insira uma opção válida!\n\n")
 				inicio()
+			pare
 		}
 	}
 	
@@ -107,7 +108,8 @@ programa{
 				menuFinal()
 			pare	
 			caso contrario:
-				escreva("Opção invalida!\n")
+				escreva("Por favor selecione uma opção valida!\n\n")
+				menuPrincipal()
 			pare
 		}
 	}
@@ -131,38 +133,38 @@ programa{
 
 		escolha(opcao){
 			caso 1:
-				seleciona(0)
+				imagem2()
 			pare
 			caso 2:
-				seleciona(1)
+				imagem1()
 			pare
 			caso 3:
-				seleciona(2)
+				imagem3()
 			pare
 			caso 4:
-				seleciona(3)
+				imagem4()
 			pare
 			caso 5:
-				seleciona(4)
+				imagem5()
 			pare
 			caso 6:
-				seleciona(5)
+				imagem6()
 			pare
 			caso 7:
-				seleciona(6)
+				imagem7()
 			pare
 			caso 8:
-				seleciona(7)
+				imagem8()
 			pare
 			caso 9:
-				seleciona(8)
+				imagem9()
 			pare
 			caso 0:
-				limpa()
 				menuPrincipal()
 			pare
 			caso contrario:
-				escreva("Por favor selecione uma opção valida!")
+				escreva("Por favor selecione uma opção valida!\n\n")
+				listaProdutos()
 			pare
 	}
 }
@@ -171,10 +173,11 @@ programa{
 
 		inteiro opcao
 		
-		escreva("=============== CATEGORIA DE PRODUTOS ===============\n",
+		escreva("=============== MENU CATEGORIA ===============\n",
 			   "Opção 1 - Escritório\n",
 			   "Opção 2 - Portáteis\n",
 			   "Opção 3 - Consoles\n",
+			   "Opção 4 - Todos os produtos\n",
 			   "Opção 0 - Voltar ao menu principal\n",
 			   "=====================================================\n\n",
 			   "Digite uma opção: ")
@@ -191,11 +194,15 @@ programa{
 			caso 3:
 				catProdutosConsoles()
 			pare
+			caso 4:
+				listaProdutos()
+			pare
 			caso 0:
 				menuPrincipal()
 			pare
 			caso contrario:
-				escreva("Opção inválida!")
+				escreva("Por favor selecione uma opção valida!\n\n")
+				produtosCategoria()
 			pare
 			}
 		}
@@ -233,7 +240,8 @@ programa{
 				produtosCategoria()
 			pare
 			caso contrario:
-				escreva("Por favor selecione uma opção valida!")
+				escreva("Por favor selecione uma opção valida!\n\n")
+				catProdutosEscritorio()
 			pare
 		}
 	}
@@ -271,7 +279,8 @@ programa{
 				produtosCategoria()
 			pare
 			caso contrario:
-				escreva("Por favor selecione uma opção valida!")
+				escreva("Por favor selecione uma opção valida!\n\n")
+				catProdutosPortateis()
 			pare
 		}
 	}
@@ -309,7 +318,8 @@ programa{
 				produtosCategoria()
 			pare
 			caso contrario:
-				escreva("Por favor selecione uma opção valida!")
+				escreva("Por favor selecione uma opção valida!\n\n")
+				catProdutosConsoles()
 			pare
 		}
 	}
@@ -357,7 +367,9 @@ programa{
 				sair()
 			pare
 			caso contrario	:
-				escreva("Opção inválida :(\n")
+				escreva("Por favor selecione uma opção valida!\n\n")
+				menuFinal()
+			pare
 		}
 	}
 	
@@ -380,7 +392,7 @@ programa{
 				menuFinal()
 			pare
 			caso contrario:
-				escreva("Opção invalida!")
+				escreva("Por favor selecione uma opção valida!\n\n")
 				confirmacaoCompra()
 			pare
 		}
@@ -402,9 +414,11 @@ programa{
 	funcao cancelaLogin(){//Pergunta se deseja cancelar o login
 		caracter opcao
 
-		escreva("Deseja cancelar o login?\n",
+		escreva("================ CANCELAR LOGIN ================\n",
+			   "Deseja cancelar o login?\n",
 			   "Opção 1 - Sim.\n",
 			   "Opção 2 - Não.\n",
+			   "================================================\n\n",
 			   "Digite uma opção:  ")
 		leia(opcao)
 		limpa()	
@@ -418,7 +432,7 @@ programa{
 				login()
 			pare
 			caso contrario:
-				escreva("Opção invalida!")
+				escreva("Por favor selecione uma opção valida!\n\n")
 				cancelaLogin()
 			pare
 		}
@@ -439,7 +453,7 @@ programa{
 			continua()			
 		} senao {
 			limpa()
-			escreva("Fora de estoque!")
+			escreva("Fora de estoque!\n")
 			continua()
 		}
 		
@@ -457,7 +471,12 @@ programa{
 		escolha(confirma){
 			caso '1':
 				limpa()
-				produtosCategoria()
+				se(precoPedido <= 0.0){
+					escreva("\nVocê não tem nenhum produto no carrinho.\n")
+					menuPrincipal()
+				}senao{
+					produtosCategoria()
+				}
 			pare
 			caso '2':
 				limpa()
@@ -469,7 +488,7 @@ programa{
 			pare
 			caso contrario:
 				limpa()
-				escreva("Opção invalida!")
+				escreva("Por favor selecione uma opção valida!\n\n")
 				continua()
 			pare
 		}
@@ -494,11 +513,11 @@ programa{
 					menuPrincipal()
 				pare
 				caso '3':
-					escreva("Realize o login para continuar. \n")
+					escreva("Realize o login para continuar.\n")
 					login()
 				pare
 				caso contrario:
-					escreva("Opção invalida! \n")
+					escreva("Por favor selecione uma opção valida!\n\n")
 					sair()
 				pare
 			}
@@ -665,8 +684,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1309; 
- * @DOBRAMENTO-CODIGO = [47, 56, 79, 114, 169, 202, 240, 278, 316, 328, 363, 389, 401, 426, 447, 507, 524, 541, 558, 575, 592, 609, 626, 643];
+ * @POSICAO-CURSOR = 10415; 
+ * @DOBRAMENTO-CODIGO = [48, 57, 80, 116, 171, 209, 248, 287, 326, 338, 375, 401, 440, 461];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
