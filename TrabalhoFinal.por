@@ -339,7 +339,6 @@ programa{
 	funcao menuFinal(){ //Pergunta se deseja finalizar o pedido
 		caracter resp, s, n
 		
-		
 		escreva("================ FINALIZAR PEDIDO ================\n",
 			   "Deseja finalizar o pedido?\n",
 			   "Opção 1 - Sim.\n",
@@ -462,9 +461,12 @@ programa{
 	funcao continua(){//Pergunta se deseja continuar comprando
 		caracter confirma
 
-		escreva("\n\nOpção 1: Continuar comprando.\n",
-			   "Opção 2: Finalizar a compra.\n",
+		escreva("\n\n================ CONTINUAR ================\n",
+			   "Deseja continuar comprando?\n",
+			   "Opção 1: Sim. Continuar comprando.\n",
+			   "Opção 2: Não. Finalizar a compra.\n",
 			   "Opção 0: Voltar ao menu principal.\n",
+			   "===========================================\n\n",
 			   "Digite uma opção: ")
 		leia(confirma)
 		
@@ -474,9 +476,9 @@ programa{
 				se(precoPedido <= 0.0){
 					escreva("\nVocê não tem nenhum produto no carrinho.\n")
 					menuPrincipal()
-				}senao{
-					produtosCategoria()
 				}
+				produtosCategoria()
+				
 			pare
 			caso '2':
 				limpa()
@@ -684,8 +686,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10415; 
- * @DOBRAMENTO-CODIGO = [48, 57, 80, 116, 171, 209, 248, 287, 326, 338, 375, 401, 440, 461];
+ * @POSICAO-CURSOR = 8396; 
+ * @DOBRAMENTO-CODIGO = [12, 21, 48, 57, 80, 116, 171, 209, 248, 287, 326, 374, 400, 412, 439, 460, 498, 528, 545, 562, 579, 596, 613, 630, 647, 664];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
