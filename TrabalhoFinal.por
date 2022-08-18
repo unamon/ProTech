@@ -21,25 +21,26 @@ programa{
 	funcao inicio(){
 		caracter opcao
 		
-	//	faca{
-		escreva("Deseja entrar na ProTech? \n1 - Sim \n2 - Não \n")
+		escreva("Deseja entrar na ProTech? \n",
+			   "Opção 1 - Sim \n",
+			   "Opção 2 - Não \n",
+			   "Digite uma opção: ")
 		leia(opcao)
 		limpa()
-			escolha(opcao){
-				caso '1':
-					escreva("Bem vindo à\n")
-					logo()
-					login()
-				pare
-				caso '2':
-					limpa()
-					inicio()
-				pare
-				caso contrario:
-					escreva("Por favor insira uma opção válida!\n\n")
-					inicio()
-			}
-		//}enquanto(opcao != '1')
+		
+		escolha(opcao){
+			caso '1':
+				escreva("Bem vindo à\n")
+				logo()
+				login()
+			pare
+			caso '2':
+				escreva("Tudo bem. Volte sempre que quiser!\n")
+			pare
+			caso contrario:
+				escreva("Por favor insira uma opção válida!\n\n")
+				inicio()
+		}
 	}
 	
 	funcao logo()
@@ -79,37 +80,36 @@ programa{
 		inteiro opcao
 
 		escreva("Olá, ", usuario, "! O que deseja fazer?\n\n" )
-	//	faca{
-			escreva("=============== MENU PRINCIPAL ===============\n",
-				   "Opção 1: Acessar produtos por categoria.\n",
-				   "Opção 2: Acessar lista de produtos completa.\n",
-				   "Opção 3: Finalizar compra.\n",
-				   "Opção 0: Sair\n",
-				   "Digite uma opção: ")
-			
-			leia(opcao)
-			limpa()
-			
-			escolha(opcao){
-				caso 0:
-					sair()
-					login()
-				pare
-				caso 1:
-					produtosCategoria()
-				pare
-				caso 2: 
-					listaProdutos()
-				pare
-				caso 3:
-					menuFinal()
-				pare	
-				caso contrario:
-					escreva("Opção invalida!\n")
-				pare
-			}
-		//}enquanto(opcao != 0)
+	
+		escreva("=============== MENU PRINCIPAL ===============\n",
+			   "Opção 1 - Acessar produtos por categoria.\n",
+			   "Opção 2 - Acessar lista de produtos completa.\n",
+			   "Opção 3 - Finalizar compra.\n",
+			   "Opção 0 - Sair\n",
+			   "==============================================\n\n",
+			   "Digite uma opção: ")
 		
+		leia(opcao)
+		limpa()
+		
+		escolha(opcao){
+			caso 0:
+				sair()
+				login()
+			pare
+			caso 1:
+				produtosCategoria()
+			pare
+			caso 2: 
+				listaProdutos()
+			pare
+			caso 3:
+				menuFinal()
+			pare	
+			caso contrario:
+				escreva("Opção invalida!\n")
+			pare
+		}
 	}
 
 	funcao listaProdutos()
@@ -125,7 +125,8 @@ programa{
 				    "\nQuantidade em estoque: ", qtdes[posicao], 
 				    "\nPor apenas: R$", precos[posicao], "\n\n")
 		}
-		escreva("Digite um produto que deseja comprar, ou 0 para sair: ")
+		escreva("=========================================\n\n",
+			   "Digite um produto que deseja comprar, ou 0 para sair: ")
 		leia(opcao)
 		limpa()
 
@@ -172,10 +173,11 @@ programa{
 		inteiro opcao
 		
 		escreva("=============== CATEGORIA DE PRODUTOS ===============\n",
-			   "Opção 1: Escritório\n",
-			   "Opção 2: Portáteis\n",
-			   "Opção 3: Consoles\n",
-			   "Opção 0: Voltar ao menu principal\n",
+			   "Opção 1 - Escritório\n",
+			   "Opção 2 - Portáteis\n",
+			   "Opção 3 - Consoles\n",
+			   "Opção 0 - Voltar ao menu principal\n",
+			   "=====================================================\n\n",
 			   "Digite uma opção: ")
 		leia(opcao)
 		
@@ -219,7 +221,8 @@ programa{
 				    "\nQuantidade em estoque: ", qtdes[posicao], 
 				    "\nPor apenas: R$", precos[posicao], "\n\n")
 		}
-		escreva("Digite uma opção, caso queira sair digite 0: ")
+		escreva("==========================================\n\n",
+			   "Digite uma opção, caso queira sair digite 0: ")
 		leia(opcao)
 		limpa()
 
@@ -258,7 +261,8 @@ programa{
 				    "\nQuantidade em estoque: ", qtdes[posicao], 
 				    "\nPor apenas: R$", precos[posicao], "\n\n")
 		}
-		escreva("Digite uma opção, caso queira sair digite 0: ")
+		escreva("==========================================\n\n",
+			   "Digite uma opção, caso queira sair digite 0: ")
 		leia(opcao)
 
 		escolha(opcao){
@@ -295,7 +299,8 @@ programa{
 				    "\nPor apenas: R$", precos[posicao], "\n\n")
 		}
 		
-		escreva("Digite uma opção, caso queira sair digite 0: ")
+		escreva("==========================================\n\n",
+			   "Digite uma opção, caso queira sair digite 0: ")
 		leia(opcao)
 
 		escolha(opcao){
@@ -333,19 +338,22 @@ programa{
 	funcao menuFinal(){
 		caracter resp, s, n
 		
-		escreva("=============== FINALIZAR PEDIDO ===============\n",
-			   "Opção 1: Sim.\n",
-			   "Opção 2: Não. Continuar comprando.\n",
-			   "Opção 3: Cancelar e sair da conta.\n",
-			   "Opção 0: Sair.\n",
-			   "Deseja finalizar agora? ")
+		
+		escreva("================ FINALIZAR PEDIDO ================\n",
+			   "Deseja finalizar o pedido?\n",
+			   "Opção 1 - Sim.\n",
+			   "Opção 2 - Não. Continuar comprando.\n",
+			   "Opção 3 - Cancelar e sair da conta.\n",
+			   "Opção 0 - Sair.\n",
+			   "==================================================\n\n",
+			   "Digite uma opção:  ")
 		leia(resp)
 		limpa()
 
 		escolha (resp) {
 			caso '1': 
-				escreva("O preço total foi: R$", mat.arredondar(precoPedido, 2), "\n",
-					   "Volte sempre!\n")
+				escreva("Valor total do pedido: R$", mat.arredondar(precoPedido, 2), "\n")
+				confirmacaoCompra()
 			pare
 			caso '2':
 				menuPrincipal()
@@ -362,15 +370,65 @@ programa{
 		}
 	}
 	
+	funcao confirmacaoCompra(){
+		caracter opcao
+	
+		escreva("================ CONFIRMAÇÃO ================\n",
+			   "Opção 1 - Sim\n",
+			   "Opção 2 - Não\n",
+			   "=============================================\n\n",
+			   "Deseja confirmar a compra? ")
+		leia(opcao)
+		
+		escolha(opcao){
+			caso '1':
+				escreva("Compra finalizada. Volte sempre!\n\n")
+			pare
+			caso '2':
+				menuFinal()
+			pare
+			caso contrario:
+				escreva("Opção invalida!")
+				confirmacaoCompra()
+			pare
+		}
+		
+	}
+	
 	funcao erroLogin(inteiro erros){
 		se(erros >= 3){
 			escreva("Você ultrapassou a quantidade de 3 tentativas. Tente novamente em alguns segundos.\n\n")
 			quantErros = 0
 			u.aguarde(3000)
-			login()
+			cancelaLogin()
 		}senao{
 			escreva("Usuario ou Senha invalidos.\n")
 			login()
+		}
+	}
+
+	funcao cancelaLogin(){
+		caracter opcao
+
+		escreva("Deseja cancelar o login?\n",
+			   "Opção 1 - Sim.\n",
+			   "Opção 2 - Não.\n",
+			   "Digite uma opção:  ")
+		leia(opcao)
+		limpa()	
+		
+		escolha(opcao){
+			caso '1':
+				escreva("Login cancelado.\n")
+				inicio()				
+			pare
+			caso '2':
+				login()
+			pare
+			caso contrario:
+				escreva("Opção invalida!")
+				cancelaLogin()
+			pare
 		}
 	}
 
@@ -378,7 +436,6 @@ programa{
 		inteiro quantiaComprada
 		limpa()
 		
-			
 		se (qtdes[indice] > 0){
 			escreva("Você selecionou ", produtos[indice],"\n", "Temos ", qtdes[indice], " disponiveis em estoque.\n" )	
 			quantiaComprada = quantidade(indice)		
@@ -395,16 +452,16 @@ programa{
 		}
 		
 	}
-
+	
 	funcao continua(){
 		caracter confirma
 
-		escreva("\nDeseja continuar comprando?\n",
-			   "Opção 1: Sim\n",
-			   "Opção 2: Não. Finalizar a compra\n",
-			   "Opção 0: Voltar ao menu principal\n",
+		escreva("\n\nOpção 1: Continuar comprando.\n",
+			   "Opção 2: Finalizar a compra.\n",
+			   "Opção 0: Voltar ao menu principal.\n",
 			   "Digite uma opção: ")
 		leia(confirma)
+		
 		escolha(confirma){
 			caso '1':
 				limpa()
@@ -429,10 +486,10 @@ programa{
 	funcao sair(){
 		caracter confirma
 		limpa()
-		escreva("Você tem certeza que deseja sair? \n1 - Sim \n2 - Não \n3 - Deslogar\n")
+		escreva("Você tem certeza que deseja sair? \n1 - Sim \n2 - Não \n3 - Sair da conta\n")
 		leia(confirma)
-		faca{
-			limpa()
+		limpa()
+		//faca{
 			escolha(confirma){
 				caso '1':
 					escreva("Volte sempre!!\n\n")
@@ -449,7 +506,7 @@ programa{
 					sair()
 				pare
 			}
-		}enquanto(confirma != '1' )
+		//}enquanto(confirma != '1' )
 	}
 }
 
@@ -458,8 +515,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 996; 
- * @DOBRAMENTO-CODIGO = [11, 27, 44, 54, 77, 169, 208, 246, 283, 320, 365, 364, 428];
+ * @POSICAO-CURSOR = 9369; 
+ * @DOBRAMENTO-CODIGO = [11, 20, 45, 55, 78, 114, 170, 210, 249, 287, 325, 337, 372, 397, 409, 455, 485];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
