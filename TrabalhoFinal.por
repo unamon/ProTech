@@ -518,7 +518,7 @@ programa{
 		escreva("=============== SAIR ===============\n",
 			   "Opção 1 - Sim. Sair da loja.\n",
 			   "Opção 2 - Não. Voltar ao menu principal.\n",
-			   "Opção 3 - Sair da conta\n",
+			   "Opção 0 - Sair da conta\n",
 			   "====================================\n\n",
 			   "Digite uma opção: ")
 		leia(confirma)
@@ -530,7 +530,7 @@ programa{
 				caso '2':
 					menuPrincipal()
 				pare
-				caso '3':
+				caso '0':
 					escreva("Realize o login para continuar.\n")
 					login()
 				pare
@@ -702,8 +702,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12252; 
- * @DOBRAMENTO-CODIGO = [13, 22, 49, 58, 122, 178, 216, 256, 296, 336, 348, 415, 427, 454, 514, 544, 561, 578, 595, 612, 629, 646, 663, 680];
+ * @POSICAO-CURSOR = 12783; 
+ * @DOBRAMENTO-CODIGO = [13, 22, 49, 58, 122, 178, 216, 256, 296, 336, 348, 415, 427, 454, 544, 561, 578, 595, 612, 629, 646, 663, 680];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
