@@ -2,6 +2,7 @@ programa{
 	inclua biblioteca Util --> u
 	inclua biblioteca Matematica --> mat
 	inclua biblioteca Graficos --> g
+	inclua biblioteca Tipos --> t
 	
 	//Login
 	inteiro quantErros = 0
@@ -79,7 +80,7 @@ programa{
     }
 	
 	funcao menuPrincipal(){//Exibe "Menu principal"
-		inteiro opcao
+		caracter opcao
 
 		escreva("Olá, ", usuario, "! O que deseja fazer?\n\n" )
 	
@@ -95,17 +96,22 @@ programa{
 		limpa()
 		
 		escolha(opcao){
-			caso 0:
+			caso '0':
 				sair()
 			pare
-			caso 1:
+			caso '1':
 				produtosCategoria()
 			pare
-			caso 2: 
+			caso '2': 
 				listaProdutos()
 			pare
-			caso 3:
-				menuFinal()
+			caso '3':
+				se(precoPedido <= 0.0){
+					escreva("Você não tem nenhum produto no carrinho.\n\n")
+					menuPrincipal()
+				}senao{
+					menuFinal()
+				}
 			pare	
 			caso contrario:
 				escreva("Por favor selecione uma opção valida!\n\n")
@@ -115,7 +121,8 @@ programa{
 	}
 
 	funcao listaProdutos(){//Exibe todos os produtos
-		inteiro opcao =0, numero = 0
+		inteiro numero = 0
+		caracter opcao 
 		
 		escreva("=============== PRODUTOS ===============\n")
 		para (inteiro posicao = 0; posicao < 9; posicao++)
@@ -132,34 +139,34 @@ programa{
 		limpa()
 
 		escolha(opcao){
-			caso 1:
+			caso '1':
 				imagem2()
 			pare
-			caso 2:
+			caso '2':
 				imagem1()
 			pare
-			caso 3:
+			caso '3':
 				imagem3()
 			pare
-			caso 4:
+			caso '4':
 				imagem4()
 			pare
-			caso 5:
+			caso '5':
 				imagem5()
 			pare
-			caso 6:
+			caso '6':
 				imagem6()
 			pare
-			caso 7:
+			caso '7':
 				imagem7()
 			pare
-			caso 8:
+			caso '8':
 				imagem8()
 			pare
-			caso 9:
+			caso '9':
 				imagem9()
 			pare
-			caso 0:
+			caso '0':
 				menuPrincipal()
 			pare
 			caso contrario:
@@ -171,7 +178,7 @@ programa{
 
 	funcao produtosCategoria() {//Seleção de categorias
 
-		inteiro opcao
+		caracter opcao
 		
 		escreva("=============== MENU CATEGORIA ===============\n",
 			   "Opção 1 - Escritório\n",
@@ -185,19 +192,19 @@ programa{
 		limpa()
 		
 		escolha (opcao) {
-			caso 1:
+			caso '1':
 				catProdutosEscritorio()
 			pare
-			caso 2:
+			caso '2':
 				catProdutosPortateis()
 			pare
-			caso 3:
+			caso '3':
 				catProdutosConsoles()
 			pare
-			caso 4:
+			caso '4':
 				listaProdutos()
 			pare
-			caso 0:
+			caso '0':
 				menuPrincipal()
 			pare
 			caso contrario:
@@ -209,7 +216,8 @@ programa{
 
 	funcao catProdutosEscritorio() {//Exibe os produtos da categoria "Escritorio"
 		limpa()
-		inteiro opcao =0, numero = 0
+		inteiro numero = 0
+		caracter opcao
 		
 		escreva("=============== ESCRITÓRIO ===============\n")
 		para (inteiro posicao = 0; posicao < 3; posicao++)
@@ -226,17 +234,17 @@ programa{
 		limpa()
 
 		escolha(opcao){
-			caso 1:
+			caso '1':
 				imagem2()				
 			pare
-			caso 2:
+			caso '2':
 				imagem1()
 				
 			pare
-			caso 3:
+			caso '3':
 				imagem3()
 			pare
-			caso 0:
+			caso '0':
 				produtosCategoria()
 			pare
 			caso contrario:
@@ -248,7 +256,8 @@ programa{
 
 	funcao catProdutosPortateis() {//Exibe os produtos da categoria "Portateis"
 		limpa()
-		inteiro opcao =0, numero = 0
+		inteiro numero = 0
+		caracter opcao 
 		
 		escreva("=============== PORTATÉIS ===============\n")
 		
@@ -265,16 +274,16 @@ programa{
 		leia(opcao)
 
 		escolha(opcao){
-			caso 1:
+			caso '1':
 				imagem4()
 			pare
-			caso 2:
+			caso '2':
 				imagem5()
 			pare
-			caso 3:
+			caso '3':
 				imagem6()
 			pare
-			caso 0:
+			caso '0':
 				limpa()
 				produtosCategoria()
 			pare
@@ -287,7 +296,8 @@ programa{
 
 	funcao catProdutosConsoles() {//Exibe os produtos da categoria "Console"
 		limpa()
-		inteiro opcao =0, numero = 0
+		inteiro numero = 0
+		caracter opcao
 		
 		escreva("=============== CONSOLES ===============\n")
 		para (inteiro posicao = 6; posicao < 9; posicao++)
@@ -304,16 +314,16 @@ programa{
 		leia(opcao)
 
 		escolha(opcao){
-			caso 1:
+			caso '1':
 				imagem7()
 			pare
-			caso 2:
+			caso '2':
 				imagem8()
 			pare
-			caso 3:
+			caso '3':
 				imagem9()
 			pare
-			caso 0:
+			caso '0':
 				limpa()
 				produtosCategoria()
 			pare
@@ -385,7 +395,12 @@ programa{
 		
 		escolha(opcao){
 			caso '1':
+				se(precoPedido <= 0.0){
+					escreva("Você não tem nenhum produto no carrinho.\n\n")
+					menuPrincipal()
+				}senao{
 				escreva("Compra finalizada. Volte sempre!\n\n")
+				}
 			pare
 			caso '2':
 				menuFinal()
@@ -469,20 +484,21 @@ programa{
 			   "===========================================\n\n",
 			   "Digite uma opção: ")
 		leia(confirma)
-		
+		limpa()
+
 		escolha(confirma){
 			caso '1':
 				limpa()
-				se(precoPedido <= 0.0){
-					escreva("\nVocê não tem nenhum produto no carrinho.\n")
-					menuPrincipal()
-				}
-				produtosCategoria()
-				
+				produtosCategoria()			
 			pare
 			caso '2':
 				limpa()
-				menuFinal()
+				se(precoPedido <= 0.0){
+					escreva("Você não tem nenhum produto no carrinho.\n\n")
+					menuPrincipal()
+				}senao{
+					menuFinal()
+				}
 			pare
 			caso '0':
 				limpa()
@@ -686,8 +702,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 8396; 
- * @DOBRAMENTO-CODIGO = [12, 21, 48, 57, 80, 116, 171, 209, 248, 287, 326, 374, 400, 412, 439, 460, 498, 528, 545, 562, 579, 596, 613, 630, 647, 664];
+ * @POSICAO-CURSOR = 12252; 
+ * @DOBRAMENTO-CODIGO = [13, 22, 49, 58, 122, 178, 216, 256, 296, 336, 348, 415, 427, 454, 514, 544, 561, 578, 595, 612, 629, 646, 663, 680];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
