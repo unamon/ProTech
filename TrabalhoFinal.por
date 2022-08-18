@@ -345,7 +345,7 @@ programa{
         }
     	}
 
-	funcao menuFinal(){ //Pergunta se deseja finalizar o pedido3
+	funcao menuFinal(){ //Pergunta se deseja finalizar o pedido
 		caracter resp, s, n
 		
 		escreva("================ FINALIZAR PEDIDO ================\n",
@@ -527,12 +527,14 @@ programa{
 			escolha(confirma){
 				caso '1':
 					escreva("Volte sempre!!\n\n")
+					precoPedido = 0.0
 				pare
 				caso '2':
 					menuPrincipal()
 				pare
 				caso '0':
 					escreva("Realize o login para continuar.\n")
+					precoPedido = 0.0
 					login()
 				pare
 				caso contrario:
@@ -703,8 +705,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 9325; 
- * @DOBRAMENTO-CODIGO = [12, 21, 48, 57, 121, 177, 215, 255, 295, 335, 385, 416, 428, 476, 515, 545, 562, 579, 596, 613, 630, 647, 664, 681];
+ * @POSICAO-CURSOR = 13148; 
+ * @DOBRAMENTO-CODIGO = [12, 21, 48, 57, 121, 177, 215, 255, 295, 335, 347, 385, 416, 428, 455, 476, 547, 564, 581, 598, 615, 632, 649, 666, 683];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
