@@ -8,20 +8,21 @@ programa{
 	cadeia senhas[] = {"502", "123", "159", "021", "996"}
 	cadeia usuario, senha
 	//Produtos
-	cadeia produtos[9] = {"Computador", "Notebook", "Impressora", "Celular", "Tablet", "Power Bank", "Xbox", "Ps4", "Nitendo"}
+	cadeia produtos[9] = {"Computador", "Notebook", "Impressora", "Celular", "Tablet", "Power Bank", "Xbox", "Ps4", "Nintendo Switch"}
 	cadeia descricoes[9] = {"Core i7 16GB RAM DDR4, SSD 240GB", "Core i5 8GB RAM DDR3, SSD 240GB",	"Multifuncional HP DeskJet Ink Advantage 2774 com Wi-Fi",
 	"Samsung Galaxy A03 Core 32GB Preto 4G", "Galaxy Tab A7 Lite 4G 32GB 3G RAM Tela imersiva", "Carregador Portátil Power Bank Redmi 10000mAh",
 	"Fat 500gb Completo","Sony Playstation 4 500Gb Standard Cor Preto Onyx Refurb", "32GB Azul E Vermelho Joy Con"}
 	inteiro qtdes[9] = {10, 20, 30, 10, 10, 20, 5, 15, 25}
 	real precos[9] = {3300.0, 2500.0, 500.0, 1300.0, 2000.0, 300.0, 2300.0, 1900.0, 2900.0}
-	//
+	//Carrinho
+	
 	real precoPedido = 0.0
 			
 	funcao inicio(){
 		caracter opcao
 		
-		faca{
-		escreva("Deseja entrar na PromoTech? \n1 - Sim \n2 - Não \n")
+	//	faca{
+		escreva("Deseja entrar na ProTech? \n1 - Sim \n2 - Não \n")
 		leia(opcao)
 		limpa()
 			escolha(opcao){
@@ -38,7 +39,7 @@ programa{
 					escreva("Por favor insira uma opção válida!\n\n")
 					inicio()
 			}
-		}enquanto(opcao != '1')
+		//}enquanto(opcao != '1')
 	}
 	
 	funcao logo()
@@ -78,7 +79,7 @@ programa{
 		inteiro opcao
 
 		escreva("Olá, ", usuario, "! O que deseja fazer?\n\n" )
-		faca{
+	//	faca{
 			escreva("=============== MENU PRINCIPAL ===============\n",
 				   "Opção 1: Acessar produtos por categoria.\n",
 				   "Opção 2: Acessar lista de produtos completa.\n",
@@ -107,7 +108,7 @@ programa{
 					escreva("Opção invalida!\n")
 				pare
 			}
-		}enquanto(opcao != 0)
+		//}enquanto(opcao != 0)
 		
 	}
 
@@ -124,46 +125,37 @@ programa{
 				    "\nQuantidade em estoque: ", qtdes[posicao], 
 				    "\nPor apenas: R$", precos[posicao], "\n\n")
 		}
-		escreva("Digite uma opção, caso queira sair digite 0: ")
+		escreva("Digite um produto que deseja comprar, ou 0 para sair: ")
 		leia(opcao)
 		limpa()
 
 		escolha(opcao){
 			caso 1:
-				escreva("Você selecionou ", produtos[0],"\n" )
-				continua()
+				seleciona(0)
 			pare
 			caso 2:
-				escreva("Você selecionou ", produtos[1],"\n" )
-				continua()
+				seleciona(1)
 			pare
 			caso 3:
-				escreva("Você selecionou ", produtos[2],"\n" )
-				continua()
+				seleciona(2)
 			pare
 			caso 4:
-				escreva("Você selecionou ", produtos[3],"\n" )
-				continua()
+				seleciona(3)
 			pare
 			caso 5:
-				escreva("Você selecionou ", produtos[4],"\n" )
-				continua()
+				seleciona(4)
 			pare
 			caso 6:
-				escreva("Você selecionou ", produtos[5],"\n" )
-				continua()
+				seleciona(5)
 			pare
 			caso 7:
-				escreva("Você selecionou ", produtos[6],"\n" )
-				continua()
+				seleciona(6)
 			pare
 			caso 8:
-				escreva("Você selecionou ", produtos[7],"\n" )
-				continua()
+				seleciona(7)
 			pare
 			caso 9:
-				escreva("Você selecionou ", produtos[8],"\n" )
-				continua()
+				seleciona(8)
 			pare
 			caso 0:
 				limpa()
@@ -233,16 +225,15 @@ programa{
 
 		escolha(opcao){
 			caso 1:
-				escreva("Você selecionou ", produtos[0],"\n" )
-				continua()
+				seleciona(0)
+				
 			pare
 			caso 2:
-				escreva("Você selecionou ", produtos[1],"\n" )
-				continua()
+				seleciona(1)
+				
 			pare
 			caso 3:
-				escreva("Você selecionou ", produtos[2],"\n" )
-				continua()
+				seleciona(2)
 			pare
 			caso 0:
 				produtosCategoria()
@@ -272,19 +263,13 @@ programa{
 
 		escolha(opcao){
 			caso 1:
-				limpa()
-				escreva("Você selecionou ", produtos[3],"\n" )
-				continua()
+				seleciona(3)
 			pare
 			caso 2:
-				limpa()
-				escreva("Você selecionou ", produtos[4],"\n" )
-				continua()
+				seleciona(4)
 			pare
 			caso 3:
-				limpa()
-				escreva("Você selecionou ", produtos[5],"\n" )
-				continua()
+				seleciona(5)
 			pare
 			caso 0:
 				limpa()
@@ -315,21 +300,13 @@ programa{
 
 		escolha(opcao){
 			caso 1:
-				limpa()
-				escreva("Você selecionou ", produtos[6],"\n", "Temos ", qtdes[6], " disponiveis no estoque.\n" )
-				precoPedido += (quantidade(produtos[6]) * precos[6])
-				
-				continua()
+				seleciona(6)
 			pare
 			caso 2:
-				limpa()
-				escreva("Você selecionou ", produtos[7],"\n")
-				continua()
+				seleciona(7)
 			pare
 			caso 3:
-				limpa()
-				escreva("Você selecionou ", produtos[8], "!\n")
-				continua()
+				seleciona(8)
 			pare
 			caso 0:
 				limpa()
@@ -341,11 +318,16 @@ programa{
 		}
 	}
 
-	funcao inteiro quantidade(cadeia nomeProduto){
+	funcao inteiro quantidade(inteiro indice){
         inteiro num
-        escreva("Quantos ", nomeProduto, "(s) deseja comprar? ")
+        escreva("Quantos ", produtos[indice], "(s) deseja comprar? ")
         leia(num)
-        retorne num
+        se (qtdes[indice] < num){
+        	escreva("Estoque insuficiente!\n\n")
+        	retorne quantidade(indice)
+        } senao {
+        	retorne num
+        }
     	}
 
 	funcao menuFinal(){
@@ -392,6 +374,28 @@ programa{
 		}
 	}
 
+	funcao seleciona(inteiro indice){
+		inteiro quantiaComprada
+		limpa()
+		
+			
+		se (qtdes[indice] > 0){
+			escreva("Você selecionou ", produtos[indice],"\n", "Temos ", qtdes[indice], " disponiveis em estoque.\n" )	
+			quantiaComprada = quantidade(indice)		
+			precoPedido += quantiaComprada * precos[indice]
+			qtdes[indice] -= quantiaComprada
+			
+			limpa()
+			escreva("Foram adicionados ", quantiaComprada, " ", produtos[indice], "(s) ao seu carrinho.")	
+			continua()			
+		} senao {
+			limpa()
+			escreva("Fora de estoque!")
+			continua()
+		}
+		
+	}
+
 	funcao continua(){
 		caracter confirma
 
@@ -432,7 +436,6 @@ programa{
 			escolha(confirma){
 				caso '1':
 					escreva("Volte sempre!!\n\n")
-					inicio()
 				pare
 				caso '2':
 					menuPrincipal()
@@ -455,8 +458,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 9527; 
- * @DOBRAMENTO-CODIGO = [11, 22, 43, 53, 76, 113, 177, 216, 255, 343, 382, 424];
+ * @POSICAO-CURSOR = 996; 
+ * @DOBRAMENTO-CODIGO = [11, 27, 44, 54, 77, 169, 208, 246, 283, 320, 365, 364, 428];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
