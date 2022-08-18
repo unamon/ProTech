@@ -22,9 +22,10 @@ programa{
 	funcao inicio(){//Pergunta se deseja entrar na loja
 		caracter opcao
 		
-		escreva("Deseja entrar na ProTech? \n",
-			   "Opção 1 - Sim \n",
-			   "Opção 2 - Não \n",
+		escreva("=============== ENTRAR ===============\n",
+			   "Opção 1 - Sim. Entrar na ProTech.\n",
+			   "Opção 2 - Não entrar.\n",
+			   "======================================\n\n",
 			   "Digite uma opção: ")
 		leia(opcao)
 		limpa()
@@ -482,7 +483,7 @@ programa{
 			   "Opção 2 - Não. Voltar ao menu principal.\n",
 			   "Opção 3 - Sair da conta\n",
 			   "====================================\n\n",
-			   "Você tem certeza que deseja sair? ")
+			   "Digite uma opção: ")
 		leia(confirma)
 		limpa()
 			escolha(confirma){
@@ -664,8 +665,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3137; 
- * @DOBRAMENTO-CODIGO = [21, 46, 55, 113, 168, 201, 239, 277, 315, 327, 362, 388, 400, 425, 446, 506, 523, 540, 557, 574, 591, 608, 625, 642];
+ * @POSICAO-CURSOR = 1309; 
+ * @DOBRAMENTO-CODIGO = [47, 56, 79, 114, 169, 202, 240, 278, 316, 328, 363, 389, 401, 426, 447, 507, 524, 541, 558, 575, 592, 609, 626, 643];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
