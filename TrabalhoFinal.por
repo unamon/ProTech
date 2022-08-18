@@ -1,6 +1,7 @@
 programa{
 	inclua biblioteca Util --> u
 	inclua biblioteca Matematica --> mat
+	inclua biblioteca Graficos --> g
 	
 	//Login
 	inteiro quantErros = 0
@@ -228,15 +229,14 @@ programa{
 
 		escolha(opcao){
 			caso 1:
-				seleciona(0)
-				
+				imagem2()				
 			pare
 			caso 2:
-				seleciona(1)
+				imagem1()
 				
 			pare
 			caso 3:
-				seleciona(2)
+				imagem3()
 			pare
 			caso 0:
 				produtosCategoria()
@@ -267,13 +267,13 @@ programa{
 
 		escolha(opcao){
 			caso 1:
-				seleciona(3)
+				imagem4()
 			pare
 			caso 2:
-				seleciona(4)
+				imagem5()
 			pare
 			caso 3:
-				seleciona(5)
+				imagem6()
 			pare
 			caso 0:
 				limpa()
@@ -305,13 +305,13 @@ programa{
 
 		escolha(opcao){
 			caso 1:
-				seleciona(6)
+				imagem7()
 			pare
 			caso 2:
-				seleciona(7)
+				imagem8()
 			pare
 			caso 3:
-				seleciona(8)
+				imagem9()
 			pare
 			caso 0:
 				limpa()
@@ -508,15 +508,170 @@ programa{
 			}
 		//}enquanto(confirma != '1' )
 	}
+	
+	//Imagens
+	funcao imagem1(){
+		
+		inteiro imag = g.carregar_imagem("imagens/imagem1.jpg")
+		logico i = verdadeiro
+		
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(735, 549)
+		g.definir_titulo_janela("Notebook")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(1)
+	}
+
+	funcao imagem2(){
+
+		inteiro imag = g.carregar_imagem("imagens/imagem2.jpg")
+		logico i = verdadeiro
+
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(458, 642)
+		g.definir_titulo_janela("Computador")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(0)
+	}
+
+	funcao imagem3(){
+
+		inteiro imag = g.carregar_imagem("imagens/imagem3.jpg")
+		logico i = verdadeiro
+
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(800, 650)
+		g.definir_titulo_janela("Impressora")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(2)
+	}
+	
+	funcao imagem4(){
+
+		inteiro imag = g.carregar_imagem("imagens/imagem4.png")
+		logico i = verdadeiro
+
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(660, 502)
+		g.definir_titulo_janela("Celular")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(3)
+	}
+
+	funcao imagem5() {
+
+		inteiro imag = g.carregar_imagem("imagens/imagem5.jpg")
+		logico i = verdadeiro
+
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(617, 463)
+		g.definir_titulo_janela("Tablet")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(4)
+	}
+
+	funcao imagem6(){
+
+		inteiro imag = g.carregar_imagem("imagens/imagem6.jpg")
+		logico i = verdadeiro
+
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(550, 550)
+		g.definir_titulo_janela("PowerBank")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(5)
+	}
+
+	funcao imagem7(){
+
+		inteiro imag = g.carregar_imagem("imagens/imagem7.png")
+		logico i = verdadeiro
+
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(600, 600)
+		g.definir_titulo_janela("Xbox")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(6)
+	}
+
+	funcao imagem8(){
+
+		inteiro imag = g.carregar_imagem("imagens/imagem8.jpg")
+		logico i = verdadeiro
+
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(500, 225)
+		g.definir_titulo_janela("PlayStation 4")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(7)
+	}
+	
+	funcao imagem9(){
+
+		inteiro imag = g.carregar_imagem("imagens/imagem9.jpg")
+		logico i = verdadeiro
+
+		g.iniciar_modo_grafico(i)
+		g.definir_dimensoes_janela(474, 419)
+		g.definir_titulo_janela("Nintendo Switch")
+
+		g.desenhar_imagem(0 ,0, imag)
+		g.renderizar()
+		u.aguarde(3000)
+		i = falso
+		g.encerrar_modo_grafico()
+		seleciona(8)
+	}
 }
+	
 
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 9369; 
- * @DOBRAMENTO-CODIGO = [11, 20, 45, 55, 78, 114, 170, 210, 249, 287, 325, 337, 372, 397, 409, 455, 485];
+ * @POSICAO-CURSOR = 7262; 
+ * @DOBRAMENTO-CODIGO = [21, 46, 56, 79, 115, 171, 249, 325, 337, 372, 397, 409, 455, 485];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
