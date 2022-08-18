@@ -19,7 +19,7 @@ programa
 	funcao imagem1(){
 
 		
-		inteiro imag = g.carregar_imagem("imagem1.jpg")
+		inteiro imag = g.carregar_imagem("imagens/imagem1.jpg")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(735, 549)
@@ -34,7 +34,7 @@ programa
 
 	funcao imagem2(){
 
-		inteiro imag = g.carregar_imagem("imagem2.jpg")
+		inteiro imag = g.carregar_imagem("imagens/imagem2.jpg")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(458, 642)
@@ -49,7 +49,7 @@ programa
 
 	funcao imagem3(){
 
-		inteiro imag = g.carregar_imagem("imagem3.jpg")
+		inteiro imag = g.carregar_imagem("imagens/imagem3.jpg")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(800, 650)
@@ -62,7 +62,7 @@ programa
 	}
 	funcao imagem4(){
 
-		inteiro imag = g.carregar_imagem("imagem4.png")
+		inteiro imag = g.carregar_imagem("imagens/imagem4.png")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(660, 502)
@@ -76,7 +76,7 @@ programa
 
 	funcao imagem5() {
 
-		inteiro imag = g.carregar_imagem("imagem5.jpg")
+		inteiro imag = g.carregar_imagem("imagens/imagem5.jpg")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(617, 463)
@@ -90,7 +90,7 @@ programa
 
 	funcao imagem6(){
 
-		inteiro imag = g.carregar_imagem("imagem6.jpg")
+		inteiro imag = g.carregar_imagem("imagens/imagem6.jpg")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(550, 550)
@@ -104,7 +104,7 @@ programa
 
 	funcao imagem7(){
 
-		inteiro imag = g.carregar_imagem("imagem7.png")
+		inteiro imag = g.carregar_imagem("imagens/imagem7.png")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(600, 600)
@@ -118,7 +118,7 @@ programa
 
 	funcao imagem8(){
 
-		inteiro imag = g.carregar_imagem("imagem8.jpg")
+		inteiro imag = g.carregar_imagem("imagens/imagem8.jpg")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(500, 225)
@@ -131,7 +131,7 @@ programa
 	}
 	funcao imagem9(){
 
-		inteiro imag = g.carregar_imagem("imagem9.jpg")
+		inteiro imag = g.carregar_imagem("imagens/imagem9.jpg")
 
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(474, 419)
@@ -148,7 +148,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 295; 
+ * @POSICAO-CURSOR = 93; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
